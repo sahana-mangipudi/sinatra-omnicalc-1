@@ -1,5 +1,7 @@
-<h1>Loan Results</h1>
-<p>Monthly Payment: <%= @results[:monthly_payment] %></p>
-<p>Principal: <%= @results[:principal] %></p>
+<h1>Monthly Payment Results</h1>
+<p>Loan Amount: <%= @results[:principal] %></p>
 <p>APR: <%= @results[:apr] %></p>
-<p>Years: <%= @results[:years] %></p>
+<p>Loan Term: <%= @results[:years] %> years</p>
+<p>Monthly Payment: <%= @results[:monthly_payment] %></p>
+
+<a href="/payment/new">Calculate another payment</a>

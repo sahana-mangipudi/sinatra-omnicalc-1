@@ -8,7 +8,7 @@ end
 
 post("/square") do
   number = params[:number].to_f
-  @result = number ** 2
+  @result = (number ** 2).round(4)
   erb :result
 end
 
@@ -20,7 +20,7 @@ end
 post("/square_root") do
   number = params[:number].to_f
   @result = Math.sqrt(number)
-  erb :result
+  erb :square_result
 end
 
 
@@ -28,7 +28,6 @@ get ("/random/new") do
   erb :random
 end
 
-#generates a random number between specified minimum and maximum 
 post ("/random") do
   min = params[:min].to_f
   max = params[:max].to_f
@@ -51,7 +50,7 @@ post "/payment/result" do
   monthly_payment = (principal * monthly_rate) / (1 - (1 + monthly_rate)**(-num_payments))
 
   formatted_payment = monthly_payment.to_fs(:currency)
-  formatted_principal = principal_payment.to_fs(:currency) 
+  formatted_principal = principal.to_fs(:currency) 
   formatted_apr = (apr * 100).round(4).to_s + "%"
 
   @results = {

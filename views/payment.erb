@@ -1,12 +1,12 @@
-<form action="/payment/results" method="get">
+<form action="/payment/result" method="post">
   <label for="apr">APR</label>
-  <input id="apr" name="apr" type="text" />
+  <input id="apr" name="apr" type="text" required />
 
   <label for="years">Number of years</label>
-  <input id="years" name="years" type="text" />
+  <input id="years" name="years" type="text" required />
 
   <label for="principal">Principal</label>
-  <input id="principal" name="principal" type="text" />
+  <input id="principal" name="principal" type="text" required />
 
   <button type="submit">Calculate monthly payment</button>
 </form>
